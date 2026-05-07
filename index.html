@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практична робота №9 — Доступні форми</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Зворотний зв’язок</h1>
+      <p>
+        Заповніть форму нижче. Поля, позначені як обов’язкові, потрібно заповнити
+        перед надсиланням.
+      </p>
+
+      <form id="feedbackForm" novalidate>
+        <fieldset>
+          <legend>Контактні дані</legend>
+
+          <div>
+            <label for="name">Ім’я (обов’язково)</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              aria-describedby="name-hint"
+            />
+            <p id="name-hint" class="hint">Введіть ваше ім’я (мінімум 2 символи).</p>
+            <p id="name-error" class="error-msg" hidden></p>
+          </div>
+
+          <div>
+            <label for="email">Електронна адреса (обов’язково)</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              inputmode="email"
+              aria-describedby="email-hint"
+            />
+            <p id="email-hint" class="hint">Напр.: student@oa.edu.ua</p>
+            <p id="email-error" class="error-msg" hidden></p>
+          </div>
+
+          <div>
+            <label for="password">Пароль (обов’язково)</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              autocomplete="new-password"
+              aria-describedby="password-hint"
+            />
+            <p id="password-hint" class="hint">Мінімум 8 символів (рекомендовано: літера + цифра).</p>
+            <p id="password-error" class="error-msg" hidden></p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Тема звернення</legend>
+
+          <div>
+            <label for="topic">Оберіть тему (обов’язково)</label>
+            <select id="topic" name="topic" required aria-describedby="topic-hint">
+              <option value="" selected>— Оберіть тему —</option>
+              <option value="question">Питання</option>
+              <option value="bug">Помилка на сайті</option>
+              <option value="suggestion">Пропозиція</option>
+            </select>
+            <p id="topic-hint" class="hint">Оберіть тему звернення зі списку.</p>
+            <p id="topic-error" class="error-msg" hidden></p>
+          </div>
+        </fieldset>
+
+        <div id="form-summary" role="alert" aria-live="assertive" tabindex="-1"></div>
+
+        <button type="submit">Надіслати</button>
+      </form>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+/* Base layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111827;
+  background: #f6f7fb;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+form {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+fieldset {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 14px 10px;
+  margin: 0 0 16px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+form > fieldset > div,
+form > fieldset > div + div {
+  margin-top: 12px;
+}
+
+label {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Error styles: not color-only (border + background + text marker) */
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-width: 2px;
+  border-color: #b00020;
+  background: #fff1f2;
+}
+
+.error-msg {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a0016; /* WCAG AA on white */
+}
+
+.error-msg::before {
+  content: "⚠ Помилка: ";
+}
+
+.error-msg[hidden] {
+  display: none;
+}
+
+#form-summary {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+button[type="submit"] {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[type="submit"]:focus {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
